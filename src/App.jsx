@@ -4,19 +4,19 @@ import { ArrowUpRight, Menu as MenuIcon, X, MapPin, Clock3, Phone } from "lucide
 const WA_LINK = "https://wa.me/923001234567?text=Assalam-o-alaikum%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Zaiqa%20Grill%20%26%20Karahi.";
 
 const dishes = [
-  { name: "Smoky Chicken Tikka", category: "BBQ", price: 850, description: "Yogurt-marinated, charcoal kissed, served with mint chutney.", image: "photo-1544025162-d76694265947", tag: "HOUSE FAVOURITE", featured: true },
-  { name: "Chicken Karahi", category: "Karahi", price: 1650, description: "Tomato, ginger, green chilli and our signature masala.", image: "photo-1603894584373-5ac82b2ae398", tag: "MADE TO ORDER", featured: true },
-  { name: "Seekh Kebab", category: "BBQ", price: 750, description: "Hand-minced beef, warming spices, flame-grilled to perfection.", image: "photo-1529042410759-befb1204b468" },
-  { name: "Chicken Biryani", category: "Rice", price: 550, description: "Fragrant basmati, slow-cooked masala, crisp fried onions.", image: "photo-1631515243349-e0cb75fb8d3a" },
-  { name: "Mutton Karahi", category: "Karahi", price: 2800, description: "Tender mutton, crushed coriander and a rich, bold finish.", image: "photo-1565557623262-b51c2513a641", tag: "FAMILY SIZE", featured: true },
-  { name: "Mint Lemonade", category: "Drinks", price: 350, description: "Fresh lemon, garden mint and just the right sparkle.", image: "photo-1546173159-315724a31696" },
-  { name: "Chicken Pulao", category: "Rice", price: 500, description: "Comforting yakhni rice with tender chicken and whole spices.", image: "photo-1512058564366-18510be2db19" },
-  { name: "Shahi Kheer", category: "Desserts", price: 400, description: "Slow-simmered rice pudding, cardamom and toasted nuts.", image: "photo-1488477181946-6428a0291777" }
+  { name: "Smoky Chicken Tikka", category: "BBQ", price: 850, description: "Yogurt-marinated chicken, kissed by charcoal and served with fresh mint chutney.", image: "photo-1544025162-d76694265947", tag: "HOUSE FAVOURITE", featured: true },
+  { name: "Chicken Karahi", category: "Karahi", price: 1650, description: "Ripe tomatoes, ginger and green chillies in our signature masala.", image: "photo-1603894584373-5ac82b2ae398", tag: "MADE TO ORDER", featured: true },
+  { name: "Seekh Kebab", category: "BBQ", price: 750, description: "Hand-minced beef and warming spices, grilled to smoky perfection.", image: "photo-1529042410759-befb1204b468" },
+  { name: "Chicken Biryani", category: "Rice", price: 550, description: "Fragrant basmati layered with slow-cooked masala and crisp golden onions.", image: "photo-1631515243349-e0cb75fb8d3a" },
+  { name: "Mutton Karahi", category: "Karahi", price: 2800, description: "Tender mutton, crushed coriander and a deep, bold finish.", image: "photo-1565557623262-b51c2513a641", tag: "FAMILY SIZE", featured: true },
+  { name: "Mint Lemonade", category: "Drinks", price: 350, description: "Fresh lemon and garden mint, bright, cooling and refreshing.", image: "photo-1546173159-315724a31696" },
+  { name: "Chicken Pulao", category: "Rice", price: 500, description: "Aromatic yakhni rice with tender chicken and whole spices.", image: "photo-1512058564366-18510be2db19" },
+  { name: "Shahi Kheer", category: "Desserts", price: 400, description: "Creamy rice pudding, slow-simmered with cardamom and toasted nuts.", image: "photo-1488477181946-6428a0291777" }
 ];
 const filters = [
-  { label: "All favourites", value: "All" },
-  { label: "From the grill", value: "BBQ" },
-  { label: "Karahi & handi", value: "Karahi" },
+  { label: "All Favourites", value: "All" },
+  { label: "From The Grill", value: "BBQ" },
+  { label: "Karahi & Handi", value: "Karahi" },
   { label: "Rice", value: "Rice" },
   { label: "Drinks", value: "Drinks" },
   { label: "Desserts", value: "Desserts" }
@@ -95,7 +95,7 @@ function ReservationForm() {
     }
     const name = String(data.get("name")).trim();
     const when = new Date(`${data.get("date")}T00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
-    setMessage(`Thank you, ${name}! We have noted a table for ${String(data.get("guests")).toLowerCase()} on ${when} at ${data.get("time")}. This demo does not send bookings to the restaurant, so please call us to confirm your table.`);
+    setMessage(`Thank you, ${name}! We have noted a table for ${String(data.get("guests")).toLowerCase()} on ${when} at ${data.get("time")}. As this is a demo, no booking has been sent, so please call us to confirm your table.`);
     form.reset();
   }
 
@@ -133,7 +133,7 @@ function ReservationForm() {
     <Field id="res-guests" label="Number of guests" error={errors.guests}>
       <select {...fieldProps("guests")} defaultValue=""><option value="" disabled>Select guests</option>{GUESTS.map(n => <option key={n}>{n}</option>)}</select>
     </Field>
-    <button className="button button-dark submit-button" type="submit">Request a reservation <ArrowUpRight size={16} /></button>
+    <button className="button button-dark submit-button" type="submit">Request A Reservation <ArrowUpRight size={16} /></button>
     <p className="form-note">Demo form only — your details are not sent to a server.</p>
     {message && <div className="form-message" role="status" aria-live="polite">{message}</div>}
   </form>;
@@ -146,14 +146,14 @@ export default function App() {
   const closeNav = () => setNavOpen(false);
 
   return <>
-    <a className="skip-link" href="#main">Skip to main content</a>
-    <div className="announcement"><span>ISLAMABAD · F-7 MARKAZ</span><span>Fresh off the fire, made for sharing</span><a href="#reservation">Book your table ↗</a></div>
+    <a className="skip-link" href="#main">Skip To Main Content</a>
+    <div className="announcement"><span>ISLAMABAD · F-7 MARKAZ</span><span>Fresh from the flame, made for sharing</span><a href="#reservation">Book Your Table ↗</a></div>
     <header className="site-header">
       <Brand />
       <button className="menu-toggle" aria-label={navOpen ? "Close navigation" : "Open navigation"} aria-expanded={navOpen} onClick={() => setNavOpen(!navOpen)}>{navOpen ? <X /> : <MenuIcon />}</button>
       <nav className={`nav-links ${navOpen ? "open" : ""}`} aria-label="Main navigation">
-        <a href="#menu" onClick={closeNav}>Our menu</a><a href="#story" onClick={closeNav}>Our story</a><a href="#gallery" onClick={closeNav}>Gallery</a><a href="#visit" onClick={closeNav}>Find us</a>
-        <a className="nav-book" href="#reservation" onClick={closeNav}>Reserve a table <ArrowUpRight size={14} /></a>
+        <a href="#menu" onClick={closeNav}>Our Menu</a><a href="#story" onClick={closeNav}>Our Story</a><a href="#gallery" onClick={closeNav}>Gallery</a><a href="#visit" onClick={closeNav}>Find Us</a>
+        <a className="nav-book" href="#reservation" onClick={closeNav}>Reserve A Table <ArrowUpRight size={14} /></a>
       </nav>
     </header>
 
@@ -165,26 +165,26 @@ export default function App() {
         <div className="hero-content">
           <Eyebrow light>ZAIQA GRILL & KARAHI · ISLAMABAD</Eyebrow>
           <h1>Fire. Flavour.<br /><em>Family.</em></h1>
-          <p className="hero-copy">From the first sizzle of the grill to the last bite of karahi — pull up a chair and make yourself at home.</p>
+          <p className="hero-copy">From the first sizzle on the grill to the last scoop of karahi, pull up a chair and settle in. Your table is always set.</p>
           <div className="hero-actions">
-            <a className="button button-gold" href="#reservation">Reserve a table <ArrowUpRight size={16} /></a>
-            <a className="button button-outline" href={WA_LINK} target="_blank" rel="noopener noreferrer">Order on WhatsApp <ArrowUpRight size={16} /></a>
+            <a className="button button-gold" href="#reservation">Reserve A Table <ArrowUpRight size={16} /></a>
+            <a className="button button-outline" href={WA_LINK} target="_blank" rel="noopener noreferrer">Order On WhatsApp <ArrowUpRight size={16} /></a>
           </div>
-          <div className="hero-note"><span className="stars">★★★★★</span><span>Good food. Good company. Every time.</span></div>
+          <div className="hero-note"><span className="stars">★★★★★</span><span>Generous plates. Warm company. Every single visit.</span></div>
         </div>
         <div className="hero-side-note">MADE SLOW · SERVED HOT</div>
-        <a className="scroll-cue" href="#menu"><span /> SCROLL TO EXPLORE</a>
+        <a className="scroll-cue" href="#menu"><span /> Scroll To Explore</a>
       </section>
 
       <div className="ticker"><span>CHARCOAL BBQ</span><b>✳</b><span>HANDI & KARAHI</span><b>✳</b><span>FAMILY FEASTS</span><b>✳</b><span>PAKISTANI SOUL</span><b>✳</b><span>CHARCOAL BBQ</span></div>
 
       <section className="section featured-section" id="featured" aria-labelledby="featured-title">
-        <div className="section-heading"><div><Eyebrow>CHEF'S PICKS</Eyebrow><h2 id="featured-title">Featured<br /><em>from the fire.</em></h2></div><p className="section-intro">The dishes our regulars ask for first. Dine in, take away or order on WhatsApp.</p></div>
+        <div className="section-heading"><div><Eyebrow>CHEF'S PICKS</Eyebrow><h2 id="featured-title">Featured<br /><em>from the fire.</em></h2></div><p className="section-intro">The plates our regulars ask for first. Enjoy them at the table, take them home, or order on WhatsApp.</p></div>
         <div className="featured-grid">{dishes.filter(d => d.featured).map(dish => <DishCard key={dish.name} dish={dish} />)}</div>
       </section>
 
       <section className="section menu-section" id="menu">
-        <div className="section-heading"><div><Eyebrow>STRAIGHT FROM OUR KITCHEN</Eyebrow><h2>A menu worth<br /><em>gathering for.</em></h2></div><p className="section-intro">Big flavours, honest ingredients, and recipes made to be passed around the table. Come hungry.</p></div>
+        <div className="section-heading"><div><Eyebrow>STRAIGHT FROM OUR KITCHEN</Eyebrow><h2>A menu worth<br /><em>gathering for.</em></h2></div><p className="section-intro">Bold flavours, honest ingredients and recipes made for passing around the table. Come hungry, leave happy.</p></div>
         <div className="menu-filters" role="group" aria-label="Filter menu by category">
           {filters.map(filter => <button key={filter.value} className={`filter ${activeFilter === filter.value ? "active" : ""}`} data-filter={filter.value} aria-pressed={activeFilter === filter.value} onClick={() => setActiveFilter(filter.value)}>{filter.label}</button>)}
         </div>
@@ -194,7 +194,7 @@ export default function App() {
 
       <section className="story-section" id="story">
         <div className="story-image"><img src={photoUrl("photo-1555939594-58d7cb561ad1", 1100)} width="1100" height="1400" alt="Friends sharing a meal around a table" loading="lazy" decoding="async" /><div className="image-stamp"><span>GOOD FOOD</span><b>♥</b><span>GOOD PEOPLE</span></div></div>
-        <div className="story-copy"><Eyebrow>A LITTLE ABOUT US</Eyebrow><h2>Rooted in tradition.<br /><em>Made for today.</em></h2><p>At Zaiqa, food is how we bring people closer. Our kitchen takes inspiration from the smoky roadside dhabas and generous family tables we grew up loving — with fresh ingredients, bold spices and a little patience.</p><p>Whether it’s a quick dinner, a family celebration or a long catch-up with friends, there’s always room for one more at our table.</p><a className="text-link" href="#reservation">Come sit with us <ArrowUpRight size={14} /></a><div className="story-signoff">Made with warmth, served with pride.</div></div>
+        <div className="story-copy"><Eyebrow>A LITTLE ABOUT US</Eyebrow><h2>Rooted in tradition.<br /><em>Made for today.</em></h2><p>At Zaiqa, food is how we bring people closer. Our kitchen draws on the smoky roadside dhabas and generous family tables we grew up loving, with fresh ingredients, bold spices and plenty of patience.</p><p>Whether it is a quick dinner, a family celebration or a long evening with old friends, there is always room for one more at our table.</p><a className="text-link" href="#reservation">Come Sit With Us <ArrowUpRight size={14} /></a><div className="story-signoff">Made with warmth, served with pride.</div></div>
       </section>
 
       <section className="gallery-section section" id="gallery">
@@ -203,27 +203,27 @@ export default function App() {
       </section>
 
       <section className="reviews-section"><div className="reviews-inner"><Eyebrow light>KIND WORDS (SAMPLE REVIEWS)</Eyebrow><h2>Good food has a<br /><em>way of bringing us back.</em></h2><div className="review-grid">
-        <blockquote><div className="stars">★★★★★</div><p>“The chicken karahi was full of flavour and the naan came out piping hot. Perfect family dinner.”</p><footer>— Ayesha K. <small>Sample review</small></footer></blockquote>
-        <blockquote><div className="stars">★★★★★</div><p>“Loved the smoky BBQ and the relaxed atmosphere. The mint chutney deserves a mention of its own.”</p><footer>— Hamza R. <small>Sample review</small></footer></blockquote>
-        <blockquote><div className="stars">★★★★★</div><p>“Generous portions, welcoming service and a great place to catch up with friends over dinner.”</p><footer>— Sana M. <small>Sample review</small></footer></blockquote>
+        <blockquote><div className="stars">★★★★★</div><p>“Rich, full-bodied karahi and naan that arrived piping hot. The perfect family dinner.”</p><footer>— Ayesha K. <small>Sample review</small></footer></blockquote>
+        <blockquote><div className="stars">★★★★★</div><p>“Gloriously smoky BBQ in a relaxed setting. The mint chutney deserves a mention of its own.”</p><footer>— Hamza R. <small>Sample review</small></footer></blockquote>
+        <blockquote><div className="stars">★★★★★</div><p>“Generous portions, gracious service and a lovely spot to catch up with friends over dinner.”</p><footer>— Sana M. <small>Sample review</small></footer></blockquote>
       </div></div></section>
 
       <section className="reservation-section section" id="reservation">
-        <div className="reservation-copy"><Eyebrow>YOUR TABLE IS WAITING</Eyebrow><h2>Make it a<br /><em>meal to remember.</em></h2><p>Planning a family dinner or catching up with your favourite people? Tell us when you’re coming and we’ll get the table ready.</p><div className="reservation-detail"><span>✳</span><div><b>Walk-ins are welcome</b><small>Reservations are recommended for groups.</small></div></div></div>
+        <div className="reservation-copy"><Eyebrow>YOUR TABLE IS WAITING</Eyebrow><h2>Make it a<br /><em>meal to remember.</em></h2><p>Planning a family dinner or an evening with your favourite people? Tell us when you are coming and we will have your table ready.</p><div className="reservation-detail"><span>✳</span><div><b>Walk-ins are always welcome</b><small>Reservations are recommended for larger groups.</small></div></div></div>
         <ReservationForm />
       </section>
 
       <section className="visit-section" id="visit">
         <div className="visit-info"><Eyebrow light>COME FIND US</Eyebrow><h2>Pull up a chair.<br /><em>We’ll light the grill.</em></h2>
-          <div className="visit-row"><MapPin className="visit-icon" /><div><b>Our location</b><p>F-7 Markaz, Islamabad, Pakistan</p><a href="https://www.google.com/maps/search/?api=1&query=F-7+Markaz+Islamabad+Pakistan" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div></div>
+          <div className="visit-row"><MapPin className="visit-icon" /><div><b>Our location</b><p>F-7 Markaz, Islamabad, Pakistan</p><a href="https://www.google.com/maps/search/?api=1&query=F-7+Markaz+Islamabad+Pakistan" target="_blank" rel="noopener noreferrer">Get Directions ↗</a></div></div>
           <div className="visit-row"><Clock3 className="visit-icon" /><div><b>Opening hours</b><p>Every day · 12:00 PM – 11:30 PM</p></div></div>
-          <div className="visit-row"><Phone className="visit-icon" /><div><b>Give us a call</b><p>+92 300 1234567</p><a href="tel:+923001234567">Call the restaurant ↗</a></div></div>
+          <div className="visit-row"><Phone className="visit-icon" /><div><b>Give us a call</b><p>+92 300 1234567</p><a href="tel:+923001234567">Call The Restaurant ↗</a></div></div>
         </div>
         <div className="map-frame"><iframe title="Map showing F-7 Markaz, Islamabad" src="https://maps.google.com/maps?q=F-7%20Markaz%2C%20Islamabad%2C%20Pakistan&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="map-caption"><span>📍</span><div><b>Zaiqa Grill & Karahi</b><small>F-7 Markaz · Islamabad</small></div></div></div>
       </section>
     </main>
 
-    <footer className="site-footer"><div className="footer-top"><Brand footer /><p>Good food. Good company.<br />Always a place at our table.</p><div className="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div><div className="footer-bottom"><span>© 2026 Zaiqa Grill & Karahi</span><span>Made with warmth in Islamabad.</span><a href="#home">Back to top ↑</a></div></footer>
-    <a className="mobile-order" href={WA_LINK} target="_blank" rel="noopener noreferrer"><span className="wa-icon">◉</span> Order on WhatsApp <span>↗</span></a>
+    <footer className="site-footer"><div className="footer-top"><Brand footer /><p>Good food, warm company<br />and always a place at our table.</p><div className="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div><div className="footer-bottom"><span>© 2026 Zaiqa Grill & Karahi</span><span>Made with warmth in Islamabad.</span><a href="#home">Back To Top ↑</a></div></footer>
+    <a className="mobile-order" href={WA_LINK} target="_blank" rel="noopener noreferrer"><span className="wa-icon">◉</span> Order On WhatsApp <span>↗</span></a>
   </>;
 }
