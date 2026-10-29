@@ -4,7 +4,11 @@ import { ArrowUpRight, Menu as MenuIcon, X, MapPin, Clock3, Phone } from "lucide
 const WA_LINK = "https://wa.me/923001234567?text=Assalam-o-alaikum%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Zaiqa%20Grill%20%26%20Karahi.";
 
 const dishes = [
+<<<<<<< HEAD
   { name: "Smoky Chicken Tikka", category: "BBQ", price: 850, description: "Yogurt-marinated chicken, kissed by charcoal and served with fresh mint chutney.", image: "photo-1544025162-d76694265947", tag: "HOUSE FAVOURITE", featured: true },
+=======
+  { name: "Chicken Tikka", category: "BBQ", price: 850, description: "Yogurt-marinated chicken, kissed by charcoal and served with fresh mint chutney.", image: "photo-1544025162-d76694265947", tag: "HOUSE FAVOURITE", featured: true },
+>>>>>>> 0d06240f6ce07a5891c61fb2e11eff72b8e9d508
   { name: "Chicken Karahi", category: "Karahi", price: 1650, description: "Ripe tomatoes, ginger and green chillies in our signature masala.", image: "photo-1603894584373-5ac82b2ae398", tag: "MADE TO ORDER", featured: true },
   { name: "Seekh Kebab", category: "BBQ", price: 750, description: "Hand-minced beef and warming spices, grilled to smoky perfection.", image: "photo-1529042410759-befb1204b468" },
   { name: "Chicken Biryani", category: "Rice", price: 550, description: "Fragrant basmati layered with slow-cooked masala and crisp golden onions.", image: "photo-1631515243349-e0cb75fb8d3a" },
@@ -226,4 +230,5 @@ export default function App() {
     <footer className="site-footer"><div className="footer-top"><Brand footer /><p>Good food, warm company<br />and always a place at our table.</p><div className="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div><div className="footer-bottom"><span>© 2026 Zaiqa Grill & Karahi</span><span>Made with warmth in Islamabad.</span><a href="#home">Back To Top ↑</a></div></footer>
     <a className="mobile-order" href={WA_LINK} target="_blank" rel="noopener noreferrer"><span className="wa-icon">◉</span> Order On WhatsApp <span>↗</span></a>
   </>;
-}
+
+} 

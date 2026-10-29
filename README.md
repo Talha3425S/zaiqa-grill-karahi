@@ -1,3 +1,5 @@
+https://zaiqa-grill-karahi-hbeu-4xtmgslds-tahche1.vercel.app/
+
 # Zaiqa Grill & Karahi — React + Vite
 
 A responsive fictional Pakistani restaurant website built with React, Vite, CSS, Lucide icons.
